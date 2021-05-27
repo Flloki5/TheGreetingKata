@@ -19,6 +19,7 @@ public class IntroduceTest {
     @Test
     public void should_ReturnUppercase_When_NameIsUppercase(){
         assertEquals("HELLO, BOB.", Introduce.greet("BOB"));
+        assertEquals("Hello, BOb.", Introduce.greet("BOb"));
     }
 
 }
