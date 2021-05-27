@@ -9,7 +9,7 @@ public class IntroduceTest {
     @Test
     public void should_ReturnGreet_ForGivenName(){
         Introduce introduce = new Introduce();
-        assertEquals("Hello, Bob.", introduce.greet(name));
+        assertEquals("Hello, Bob.", introduce.greet("Bob"));
     }
 
 }
