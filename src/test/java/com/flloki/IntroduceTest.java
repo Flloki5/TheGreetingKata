@@ -8,7 +8,12 @@ public class IntroduceTest {
 
     @Test
     public void should_ReturnGreet_ForGivenName(){
-        assertEquals("Hello, Bob.", Introduce.greet("Bob"));
+        assertEquals("Hello, Bob", Introduce.greet("Bob"));
+    }
+
+    @Test
+    public void should_ReturnGreet_When_NameIsNull(){
+        assertEquals("Hello, friend.", Introduce.greet(null));
     }
 
 }
