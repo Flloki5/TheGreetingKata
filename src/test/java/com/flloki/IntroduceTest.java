@@ -12,8 +12,13 @@ public class IntroduceTest {
     }
 
     @Test
-    public void should_ReturnGreet_When_NameIsNull(){
+    public void should_ReturnDefaultGreet_When_NameIsNull(){
         assertEquals("Hello, my friend.", Introduce.greet(null));
+    }
+
+    @Test
+    public void should_ReturnUppercase_When_NameIsUppercase(){
+        assertEquals("HELLO, BOB.", Introduce.greet("BOB"));
     }
 
 }
