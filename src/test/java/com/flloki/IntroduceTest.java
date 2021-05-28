@@ -30,7 +30,8 @@ public class IntroduceTest {
 
     @Test
     public void should_ReturnGreet_When_InputIsMoreThanTwoNames(){
-        assertEquals("Hello, Bob, Marley and Charlotte.", Introduce.greet("Bob", "Marley", "Charlotte"));
+        assertEquals("Hello, Bob, Marley, and Charlotte.", Introduce.greet("Bob", "Marley", "Charlotte"));
+        assertEquals("Hello, Bob, Marley, Charlotte, and Tom.", Introduce.greet("Bob", "Marley", "Charlotte", "Tom"));
     }
 
 }

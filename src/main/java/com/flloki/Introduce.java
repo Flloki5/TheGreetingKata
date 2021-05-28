@@ -15,7 +15,21 @@ public class Introduce {
 
     public static String greet(String... names){
 
-        return "Hello, " + String.join(" and ", names) + ".";
+        if(names.length == 2){
+            return "Hello, " + String.join(" and ", names) + ".";
+        }else{
+            StringBuilder builder = new StringBuilder();
+            builder.append("Hello, ");
+
+            for (int i = 0; i < names.length - 1; i++) {
+                builder.append(names[i] + ", ");
+            }
+
+            builder.append("and " + names[names.length - 1] + ".");
+
+            return builder.toString();
+        }
+
     }
 
     public static boolean stringIsUpperCase(String name){
