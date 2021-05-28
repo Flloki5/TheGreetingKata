@@ -23,8 +23,14 @@ public class IntroduceTest {
     }
 
     @Test
-    public void should_ReturnGreet_When_InputIsArrayOfNames(){
+    public void should_ReturnGreet_When_InputIsTwoNames(){
         assertEquals("Hello, Bob and Marley.", Introduce.greet("Bob", "Marley"));
+        assertEquals("Hello, Bob and Marley.", Introduce.greet(new String[] {"Bob", "Marley"}));
+    }
+
+    @Test
+    public void should_ReturnGreet_When_InputIsMoreThanTwoNames(){
+        assertEquals("Hello, Bob, Marley and Charlotte.", Introduce.greet("Bob", "Marley", "Charlotte"));
     }
 
 }
