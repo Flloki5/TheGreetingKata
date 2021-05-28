@@ -34,4 +34,9 @@ public class IntroduceTest {
         assertEquals("Hello, Bob, Marley, Charlotte, and Tom.", Introduce.greet("Bob", "Marley", "Charlotte", "Tom"));
     }
 
+    @Test
+    public void should_ReturnMixedGreet_When_InputContainsLowerAndUppercase(){
+        assertEquals("Hello, Bob and Charlotte. AND HELLO Marley!", Introduce.greet("Bob", "MARLEY", "Charlotte"));
+    }
+
 }
