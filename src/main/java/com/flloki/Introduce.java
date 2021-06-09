@@ -4,7 +4,7 @@ import java.util.stream.Stream;
 
 public class Introduce {
 
-    public static String greet(String name){
+    public String greet(String name){
 
         if(name == null) {
             return "Hello, my friend.";
@@ -15,7 +15,7 @@ public class Introduce {
         }
     }
 
-    public static String greet(String... names){
+    public String greet(String... names){
 
         if(names.length == 2){
             return "Hello, " + String.join(" and ", names) + ".";
@@ -26,7 +26,7 @@ public class Introduce {
         }
     }
 
-    private static String generateMixedGreet(String... names){
+    private String generateMixedGreet(String... names){
         StringBuilder builder = new StringBuilder();
         builder.append("Hello, " + names[0]);
         builder.append(" and " + names[2]);
@@ -50,14 +50,15 @@ public class Introduce {
         return builder.toString();
     }
 
-    public static boolean isArrayContainsUpperCaseString(String... names){
+
+    private boolean isArrayContainsUpperCaseString(String... names){
         long count = Stream.of(names)
-                .filter(Introduce::stringIsUpperCase)
+                .filter(name -> stringIsUpperCase(name))
                 .count();
         return count > 0;
     }
 
-    private static String generateSimpleGreet(String... names){
+    private String generateSimpleGreet(String... names){
         StringBuilder builder = new StringBuilder();
         builder.append("Hello, ");
 
@@ -69,7 +70,7 @@ public class Introduce {
         return builder.toString();
     }
 
-    public static boolean stringIsUpperCase(String name){
+    private boolean stringIsUpperCase(String name){
         long count = name.chars()
                 .filter(Character::isUpperCase)
                 .count();
