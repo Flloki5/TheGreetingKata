@@ -39,4 +39,9 @@ public class IntroduceTest {
         assertEquals("Hello, Bob and Charlotte. AND HELLO MARLEY!", Introduce.greet("Bob", "MARLEY", "Charlotte"));
     }
 
+    @Test
+    public void should_ReturnGreet_When_StringContainsComma(){
+        assertEquals("Hello, Bob, Marley, and Charlotte.", Introduce.greet("Bob", "Marley, Charlotte"));
+    }
+
 }
