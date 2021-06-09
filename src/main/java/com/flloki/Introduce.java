@@ -31,10 +31,19 @@ public class Introduce {
         builder.append("Hello, " + names[0]);
         builder.append(" and " + names[2]);
         builder.append(". AND HELLO " + names[1] + "!");
+
+        /* Alternative way, but more complicated and ugly... */
+//        builder.append("Hello, ");
 //        for(int i = 0; i <= 2; i++){
 //            for(int j = 0; j < names.length; j++){
-//                if(i == 0 && stringIsUpperCase(names[j])){
-//                    builder.append(names[j] + ", ");
+//                if(i == 0 && !stringIsUpperCase(names[j])){
+//                    if(j == names.length - 1){
+//                        builder.append(names[j] + ".");
+//                    }else {
+//                        builder.append(names[j] + " and ");
+//                    }
+//                }else if(i == 1 && stringIsUpperCase(names[j])){
+//                    builder.append(" AND HELLO " + names[j] + "!");
 //                }
 //            }
 //        }
