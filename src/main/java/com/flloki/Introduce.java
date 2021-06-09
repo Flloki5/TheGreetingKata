@@ -1,5 +1,7 @@
 package com.flloki;
 
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Introduce {
@@ -16,14 +18,28 @@ public class Introduce {
     }
 
     public String greet(String... names){
-
-        if(names.length == 2){
-            return "Hello, " + String.join(" and ", names) + ".";
-        }else if(isArrayContainsUpperCaseString(names)){
-            return generateMixedGreet(names);
+        String[] validatedNames = validateInput(names);
+        if(validatedNames.length == 2){
+            return "Hello, " + String.join(" and ", validatedNames) + ".";
+        }else if(!isArrayContainsUpperCaseString(validatedNames)){
+            return generateSimpleGreet(validatedNames);
         }else{
-            return generateSimpleGreet(names);
+            return generateMixedGreet(validatedNames);
         }
+    }
+
+    private String[] validateInput(String[] names){
+        String[] newArray = new String[names.length + 1];
+        for(int index = 0; index < names.length; index++){
+            if(names[index].contains(",")) {
+                String[] splitStringArr = names[1].split(",");
+                newArray[0] = names[0];
+                newArray[1] = splitStringArr[0].strip();
+                newArray[2] = splitStringArr[1].strip();
+                return newArray;
+            }
+        }
+        return names;
     }
 
     private String generateMixedGreet(String... names){
