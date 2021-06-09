@@ -46,4 +46,8 @@ public class IntroduceTest {
         assertEquals("Hello, Bob, Marley, and Charlotte.", introduce.greet("Bob", "Marley, Charlotte"));
     }
 
+    @Test
+    public void should_ReturnGreetWithComma_When_InputContainsEscapeComma(){
+        assertEquals("Hello, Bob, Marley, and Charlotte.", introduce.greet("Bob", "Marley, Charlotte"));
+    }
 }
